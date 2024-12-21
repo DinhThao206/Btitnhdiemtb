@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1>Bảng điểm trung bình</h1>
+<input type="number" id="Math" min="1" max="10" placeholder="Điểm toán">
+<input type="number" id="Physics" min="1" max="10" placeholder="Điểm lý">
+<input type="number" id="Chemistry" min="1" max="10" placeholder="Điểm hoá">
+ <button onclick="tinh()">Tính</button> 
+  <p id="ketqua"></p>
+<body>
+   <script>
+     const tinh = () => {
+       
+           let mathScore = +document.getElementById("Math").value;
+            let physicsScore = +document.getElementById("Physics").value;
+            let chemistryScore = +document.getElementById("Chemistry").value;
+
+            
+            if (isNaN(mathScore) || isNaN(physicsScore) || isNaN(chemistryScore)) {
+                document.getElementById("ketqua").innerText = "Vui lòng nhập điểm hợp lệ!";
+            } else {
+            
+                let avgScore = (mathScore + physicsScore + chemistryScore) / 3;
+                document.getElementById("ketqua").innerText = "Điểm trung bình: " + avgScore.toFixed(2);
+            }
+        };
+   </script>
+</body>
+</html>
